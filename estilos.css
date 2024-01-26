@@ -19,7 +19,7 @@
   }
   
   header, footer{
-    background-color: #2a0370;
+    background-color: #6c6fa0;
     color: #ffffff;
     
   }
@@ -39,7 +39,7 @@
   }
 
   .contenedor-boton {
-    background-color: #08107e;
+    background-color: #6c6fa0;
     border-radius: 50%;
     position: fixed;
     z-index: 999;
@@ -73,17 +73,23 @@
     flex-wrap: wrap;
   }
 
-  footer, .gallery, .logo, .sec {
+  /*footer, .gallery, .logo, .sec {
     align-items: center;
-    justify-content: center;
     align-content: center;
-  }
+    justify-content: center;
+  }*/
 
+  footer, .gallery, .logo, .sec, .servicios, .info, .info1 {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    /*background-color: rgb(95, 87, 141);*/
+  }
   
   .gallery img {
     border-radius: 10px;
-    height: 350px;
-    max-width: 300px;
+    height: 450px;
+    max-width: 500px;
     object-fit: cover;
     width: 100%;
   }
@@ -93,12 +99,8 @@
     width: 300px;
   }
   
-   .info1 {
+  .info1 {
     margin-top: 25px;
-  }
-
-  h1, .servicios, .info, .info1 {
-    text-align: center;
   }
 
   .logo {
@@ -120,18 +122,81 @@
   }
 
   .somos {
-    text-align: justify;
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 5px;
-    width: 250px;
+    margin: 0px 30px;
+    text-align: center;
   }
 
+/*--------------------------------*/
+.slider-box {
+  align-items: center;
+  align-content: center;
+  height: calc(100vh-10px);
+  margin: 20px 20px 0px 30px; 
+  overflow: hidden;
+  width: 1000px;
+  background-color: black;
+}
+
+.slider-box ul {
+  animation: slide 20s infinite alternate ease-in-out;
+  display: flex;
+  padding: 0px;
+  width: 400%;
+}
+
+.slider-box li {
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+
+.slider-box img {
+  width: calc(100%-5%);
+  height: 150vh;
+  object-fit: cover;
+}
+
+/*-----------------------------------------*/
+
   @media (min-width: 0px) and (max-width: 940px){
+
+    body{
+      margin: auto;
+    }
+
+    h1, h2, h3 .servicios, .info, .info1 {
+      font-size: 15px;
+      text-align: center;
+    }
+
     .sec {
       margin: auto 50px;
       width: 400px;
-    }   
+    } 
+
+    .slider-box {
+      width: auto;
+   }
+   
+    .slider-box img {
+   	 	border-radius: 10px;
+    	height: 400px;
+    	margin: 0px 20px;
+    	max-width: 350px;
+    	object-fit: cover;
+    	width: 100%;
+   }
+
+   .somos {
+      margin: auto;
+      padding: auto;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 5px;
+      width: 250px;     
+    }
+    
+
   }
 
   @keyframes efecto-whatsapp {
@@ -143,4 +208,19 @@
       box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
     }
     
+  }
+
+  @keyframes slide {
+    0%  {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;} 
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}  
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}  
+    100% {margin-left: -300%;}
+
   }
